@@ -1,0 +1,352 @@
+/* Header Styling */
+.header {
+    background-color: #fff;
+    height: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.header .logo img {
+    width: 30px; /* Sesuaikan ukuran logo */
+    height: 30px;
+    object-fit: contain; /* Pastikan gambar tetap proporsional */
+}
+
+/* Profile Icon Styling */
+.header .dropdown img {
+    width: 30px; /* Sesuaikan ukuran ikon profil */
+    height: 30px;
+    object-fit: cover; /* Potong gambar sesuai dimensi */
+}
+  
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #222; /* Warna gelap */
+    color: #fff;
+    height: 100vh;
+    padding: 20px;
+    position: relative; /* Konteks untuk dropdown */
+    overflow: visible; /* Pastikan dropdown terlihat */
+}
+  
+.sidebar h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+  
+/* Menu Item Styling */
+.sidebar a:not(.dropdown-item) {
+    display: flex;
+    align-items: center;
+    justify-content: first baseline; /* Agar warna merah di kanan */
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #444; /* Kotak pada tiap bar */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #888; /* Warna latar */
+    transition: all 0.3s ease;
+}
+  
+.sidebar a.active{
+    border-left: 5px solid #ff5722;
+}
+
+.sidebar a:hover {
+    background-color: #444; /* Warna latar aktif */
+}
+  
+.menu-icon {
+    width: 22px; /* Ukuran ikon */
+    height: auto;
+    margin-right: 20px; /* Jarak antara ikon dan teks */
+}
+
+
+  
+/* Sidebar Footer */
+.sidebar-logo {
+    margin-top: auto; /* Geser ke bawah */
+}
+  
+.sidebar-logo-img {
+    width: 60px;
+    height: auto;
+    margin-top: 120px;
+}
+  
+.sidebar-tagline {
+    font-size: 0.7rem;
+    color: #bbb;
+}
+  
+.sidebar-appname {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 18px;
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 20px;
+    background-color: #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+  
+/* Form Container Styling */
+.form-container {
+    background-color: #f9f9f9 ;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+/* Button Styling */
+.form-container button {
+    background-color: red;
+    color: #fff;
+    border: none;
+    
+}
+  
+.form-container button:hover {
+    background-color: darkred;
+}
+
+
+/* Footer Styles */
+.footer-custom {
+    background: #fdfdfd; /* Background putih tulang */
+    border-top: 2px solid #ddd; /* Garis pemisah */
+    color: #333; /* Warna teks lebih gelap untuk kontras */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    transition: all 0.3s ease; /* Transisi halus */
+}
+  
+.footer-custom a.text-link {
+    color: #007bff; /* Warna tautan biru */
+    text-decoration: none; /* Hilangkan garis bawah */
+    transition: color 0.3s ease; /* Transisi warna */
+}
+  
+.footer-custom a.text-link:hover {
+    color: #0056b3; /* Warna tautan biru lebih gelap pada hover */
+    text-decoration: underline; /* Garis bawah pada hover */
+}
+  
+.footer-custom p {
+    margin: 0;
+    font-size: 14px; /* Ukuran font */
+    font-weight: 400;
+    letter-spacing: 0.5px; /* Jarak antar huruf */
+}
+
+.custom-dropdown .dropdown-menu {
+    position: absolute; /* Memastikan dropdown tetap di dalam sidebar */
+    left: 0; /* Mulai dari sisi kiri */
+    right: 0; /* Membentang hingga sisi kanan */
+    width: 100%; /* Sesuaikan dengan lebar sidebar */
+    background: #333; /* Warna latar dropdown */
+    color: #fff; /* Warna teks */
+    border: none; /* Hilangkan border */
+    padding: 10px; /* Jarak dalam */
+    z-index: 1000; /* Pastikan dropdown muncul di atas elemen lainnya */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+.custom-dropdown .dropdown-item {
+    display: block; /* Item memenuhi lebar penuh */
+    width: 100%; /* Sesuaikan dengan lebar dropdown */
+    background: #444; /* Warna latar item */
+    color: #fff; /* Warna teks */
+    padding: 10px 15px; /* Jarak teks di dalam item */
+    text-align: left; /* Teks rata kiri */
+    border-radius: 0; /* Hilangkan sudut melengkung */
+    margin: 5px 0; /* Jarak antar item */
+    transition: all 0.3s ease; /* Transisi hover */
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: #555; /* Warna latar saat hover */
+    color: #fff; /* Warna teks saat hover */
+}
+
+
+
+/* Accordion button style */
+.accordion-form-container{
+    background-color: #f9f9f9 ;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    transition: 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.accordion-button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Saat tombol aktif/dibuka */
+.accordion-button.active::after {
+    transform: rotate(0deg); /* Panah mengarah ke bawah */
+}
+
+/* Accordion content style */
+.accordion-content {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-top: none;   
+}
+
+.accordion-content .btn {
+    margin-top: 10px;
+}
+
+
+
+.file-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Agar teks label dan span sejajar vertikal */
+    margin-bottom: 5px; /* Jarak antar baris */
+}
+
+.file-info label {
+    width: 150px; /* Lebar tetap untuk label */
+    font-weight: bold;
+    text-align: left; /* Titik dua di kanan */
+    position: relative;
+}
+
+.file-info label::after {
+    content: ":"; /* Menambahkan titik dua */
+    position: absolute;
+    right: -10px; /* Geser titik dua sedikit ke kanan */
+}
+
+.file-info span {
+    flex-grow: 1; /* Mengisi sisa ruang */
+    text-align: left; /* Teks rata kiri */
+    white-space: nowrap; /* Mencegah teks terpotong di baris baru */
+    overflow: hidden; /* Untuk menghindari teks overflow */
+    text-overflow: ellipsis; /* Tambahkan ellipsis jika teks terlalu panjang */
+    padding-left: 30px; /* Beri jarak antara titik dua dan teks */
+}
+
+
+
+/* Flash Message Container */
+.flash-message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Flash Message Styles */
+  .flash-message {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  /* Flash Message Icons */
+  .flash-icon {
+    font-size: 2rem;
+  }
+  
+  .icon-success {
+    color: #4caf50; /* Hijau untuk success */
+  }
+  
+  .icon-error {
+    color: #f44336; /* Merah untuk error */
+  }
+  
+  /* Flash Content */
+  .flash-content h5 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .flash-content p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Flash Message Categories */
+  .alert-success {
+    border-left: 5px solid #4caf50;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .alert-error {
+    border-left: 5px solid #f44336;
+    background-color: #ffebee;
+    color: #c62828;
+  }
+  
+  /* Close Button */
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #555;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Fade Out Transition */
+  .flash-message.fade-out {
+    animation: fadeOut 0.5s ease-out;
+  }
+  
+
+ 

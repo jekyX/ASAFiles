@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Dekripsi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <header class="header d-flex align-items-center justify-content-between px-4">
+    <div class="logo d-flex align-items-center">
+      <img src="/static/img/logo.png" alt="Logo" class="me-3">
+      <h5 class="m-0">ASA FILES </h5>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/img/user.png" alt="Profile" class="me-2">
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Log Out</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 sidebar">
+        <h4 class="text-center mb-4">DASHBOARD</h4>
+        <a href="/" class="nav-link d-flex align-items-center">
+          <img src="/static/img/encrypted-icon.png" alt="Enkripsi Icon" class="menu-icon me-3"> Enkripsi
+        </a>
+        <a href="/decrypt" class="nav-link active d-flex align-items-center">
+          <img src="/static/img/decryption-icon.png" alt="Dekripsi Icon" class="menu-icon me-3"> Dekripsi
+        </a>
+        <div class="dropdown custom-dropdown">
+          <a href="#" class="nav-link d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown">
+              <img src="/static/img/output-icon.png" alt="Output Icon" class="menu-icon me-3"> Output
+          </a>
+          <ul class="dropdown-menu">
+              <li><a class="nav-link dropdown-item" href="/encrypted_files">Hasil Enkripsi</a></li>
+              <li><a class="nav-link dropdown-item" href="hasil_dekripsi.html">Hasil Dekripsi</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-logo text-center mt-4">
+          <img src="/static/img/logo.png" alt="Logo" class="sidebar-logo-img">
+          <h5 class="sidebar-tagline">Keep Your Secret</h5>
+          <h3 class="sidebar-appname">ASA FILES</h3>
+        </div>
+      </div>
+
+      <div class="col-md-10 main-content">
+        <div class="flash-message-container mt-3">
+          {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message alert alert-dismissible fade show alert-{{ category }}" role="alert">
+              <div class="flash-icon">
+                {% if category == 'success' %}
+                  <span class="icon-success">✔</span>
+                {% elif category == 'error' %}
+                  <span class="icon-error">✖</span>
+                {% endif %}
+              </div>
+              <div class="flash-content">
+                <h5 class="flash-title">{{ "Success!" if category == "success" else "Error!" }}</h5>
+                <p>{{ message }}</p>
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+          {% endif %}
+          {% endwith %}
+        </div>
+        
+
+        <div class="form-container">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4><b>FORM DEKRIPSI</b></h4>
+          </div>
+          <form action="/decrypt" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file_name" class="form-label">Pilih File Terenkripsi:</label>
+                <select class="form-control" id="file_name" name="file_name" required>
+                    {% for file in files %}
+                    <option value="{{ file['encrypted_name'] }}">{{ file['encrypted_name'] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group mt-4">
+                <label for="decrypt_method" class="form-label">Pilih Metode Dekripsi:</label>
+                <select class="form-control" id="decrypt_method" name="decrypt_method" required onchange="toggleFields()">
+                    <option value="AES">AES</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </div>
+            
+            <div class="form-group mt-4" id="password_field">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+
+            <div class="form-group mt-4" id="private_key_field" style="display:none;">
+                <label for="private_key" class="form-label">Pilih Kunci RSA Pribadi:</label>
+                <input type="file" class="form-control" id="private_key" name="private_key">
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Dekripsi File</button>
+          </form>          
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container-fluid footer-custom py-4">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-md-0">&copy; <a class="text-link" href="#">ASA FILES</a>. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">Designed by <a class="text-link" href="https://htmlcodex.com">Our Team</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/main.js"></script>
+
+</body>
+</html>

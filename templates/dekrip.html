@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Enkripsi</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header d-flex align-items-center justify-content-between px-4">
+    <div class="logo d-flex align-items-center">
+      <img src="/static/img/logo.png" alt="Logo" class="me-3">
+      <h5 class="m-0">ASA FILES </h5>
+    </div>
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/img/user.png" alt="Profile" class="me-2">
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Log Out</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-2 sidebar">
+        <h4 class="text-center mb-4">DASHBOARD</h4>
+        <a href="/" class="nav-link active d-flex align-items-center">
+          <img src="/static/img/encrypted-icon.png" alt="Enkripsi Icon" class="menu-icon me-3"> Enkripsi
+        </a>
+        <a href="/decrypt" class="nav-link d-flex align-items-center">
+          <img src="/static/img/decryption-icon.png" alt="Dekripsi Icon" class="menu-icon me-3"> Dekripsi
+        </a>
+        <div class="dropdown custom-dropdown">
+          <a href="#" class="nav-link d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown">
+              <img src="/static/img/output-icon.png" alt="Output Icon" class="menu-icon me-3"> Output
+          </a>
+          <ul class="dropdown-menu">
+              <li><a class="nav-link dropdown-item" href="/encrypted_files">Hasil Enkripsi</a></li>
+              <li><a class="nav-link dropdown-item" href="hasil_dekripsi.html">Hasil Dekripsi</a></li>
+          </ul>
+        </div>
+          <div class="sidebar-logo text-center mt-4">
+            <img src="/static/img/logo.png" alt="Logo" class="sidebar-logo-img">
+            <h5 class="sidebar-tagline">Keep Your Secret</h5>
+            <h3 class="sidebar-appname">ASA FILES</h3>
+          </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-10 main-content">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5><b>FORM ENKRIPSI</b></h5>
+        </div>
+
+        <!--Form Enkripsi-->
+        <div class="form-container">
+          <form action="/encrypt" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="tanggal" class="form-label">Tanggal</label>
+              <input type="date" class="form-control" id="tanggal" name="date">
+            </div>
+            <div class="mb-3">
+              <label for="file" class="form-label">File</label>
+              <input type="file" class="form-control" id="file" name="file" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="mb-3">
+              <label for="deskripsi" class="form-label">Deskripsi</label>
+              <textarea class="form-control" id="deskripsi" name="description" rows="3" placeholder="Deskripsi"></textarea>
+            </div>
+            <button type="submit" class="btn w-100" id="encryptButton">Enkripsi File</button>
+          </form>
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container-fluid footer-custom py-4">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-md-0">
+              &copy; <a class="text-link" href="#">ASA FILES</a>. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">
+              Designed by <a class="text-link" href="https://htmlcodex.com">Our Team</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+</html>
